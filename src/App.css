@@ -1,0 +1,24 @@
+.container{
+  --lightBlue:rgb(55, 168, 225);
+  --white:white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+
+}
+
+
+span, h3{
+  color: var(--white);
+}
+
+.xo{
+  display: flex;
+  margin-top: 30px;
+}
+
+img:hover{
+  transform: scale(1.1);
+}
