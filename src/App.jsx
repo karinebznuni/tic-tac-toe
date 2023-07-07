@@ -19,7 +19,7 @@ function App() {
       <div className="container">
         {isSubmitted ? (
           <Card>
-            <Board isX={isX} />
+            <Board isX={isX} setIsSubmitted={setIsSubmitted}/>
           </Card>
         ) : (
           <Card setIsSubmitted={setIsSubmitted}>
