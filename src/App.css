@@ -1,14 +1,17 @@
-.container{
+
+:root{
   --lightBlue:rgb(55, 168, 225);
   --white:white;
+  --darkBLue:rgb(15, 15, 45);
+}
+
+.container{
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--white);
-
 }
-
 
 span, h3{
   color: var(--white);

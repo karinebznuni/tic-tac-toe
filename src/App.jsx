@@ -22,7 +22,7 @@ function App() {
             <Board isX={isX} />
           </Card>
         ) : (
-          <Card>
+          <Card setIsSubmitted={setIsSubmitted}>
             <h3>TIC-TAC-TOE</h3>
             <span>Pick who goas first?</span>
             <div className="xo">

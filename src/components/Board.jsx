@@ -2,7 +2,7 @@ import "./Board.css";
 import Square from "./Square";
 import { useState } from "react";
 
-export default function Board({ isX }) {
+export default function Board({ isX, setIsSubmitted }) {
   const [xIsNext, setXIsNext] = useState(isX);
   const [squares, setSquares] = useState(Array(9).fill(null));
 
@@ -20,10 +20,24 @@ export default function Board({ isX }) {
     setXIsNext(!xIsNext);
   }
 
+  const restartGame = () => {
+    setIsSubmitted(false);
+    setSquares(Array(9).fill(null));
+  };
+
   const winner = calculateWinner(squares);
   let status;
+  let filled = true;
+  squares.map((square) => {
+    if (item === null) {
+      filled = false;
+    }
+  });
+
   if (winner) {
     status = "Winner: " + winner;
+  } else if (filled) {
+    status = "It is a tie";
   } else {
     status = "Next player is: " + (xIsNext ? "X" : "O");
   }
@@ -76,6 +90,9 @@ export default function Board({ isX }) {
             ></Square>
           </div>
         </div>
+        <button className="restart-btn" onClick={() => restartGame()}>
+          Restart
+        </button>
       </div>
     </>
   );
